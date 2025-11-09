@@ -178,23 +178,23 @@ function clearall() {
 }
 
 function equalto() {
-    const equaltoanswer = eval(answer.innerText);
-    lengthofequaltoanswer = equaltoanswer.length
-    console.log(lengthofequaltoanswer)
-
-    roundoff = equaltoanswer.toFixed(2)
-
     if (answer.innerText != "Modern Calculator") {
-    } else if (roundoff == "0.00") {
-        answer.innerText = ("0");
-        update("0");
-    } else {
-        const lastans = equaltoanswer.toString().split("");
-        let lastnumans = lastans[lastans.length - 1];
-        update(lastnumans);
+        const equaltoanswer = eval(answer.innerText);
 
-        answer.innerText = roundoff;
+        roundoff = equaltoanswer.toFixed(2)
+        if (roundoff == "0.00") {
+            roundoff = ("0")
+            answer.innerText = roundoff;
+            update(roundoff);
+        } else {
+            const lastans = equaltoanswer.toString().split("");
+            let lastnumans = lastans[lastans.length - 1];
+            update(lastnumans);
+
+            answer.innerText = roundoff;
+        }
     }
+    else { }
 }
 
 function del() {
