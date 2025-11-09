@@ -189,10 +189,9 @@ function equalto() {
         } else {
             const lastans = equaltoanswer.toString().split("");
             let lastnumans = lastans[lastans.length - 1];
-
-            answer.innerText = equaltoanswer;
             update(lastnumans);
-            console.log(lastnum)
+            
+            answer.innerText = roundoff;
         }
     }
     else { }
